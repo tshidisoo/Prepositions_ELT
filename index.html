@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prepositions of Place Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐨 Prepositions of Place Game</h1>
+            <p>Let's learn prepositions of place with fun games!</p>
+        </header>
+
+        <div class="game-selector">
+            <button class="game-btn" onclick="showGame('wordsearch')">Word Search</button>
+            <button class="game-btn" onclick="showGame('matching')">Matching Game</button>
+            <button class="game-btn" onclick="showGame('unscramble')">Unscramble</button>
+            <button class="game-btn" onclick="showGame('truefalse')">True or False</button>
+        </div>
+
+        <div class="score-board">
+            <div class="score">Score: <span id="score">0</span></div>
+            <div class="lives">Lives: <span id="lives">3</span></div>
+        </div>
+
+        <!-- Word Search Game -->
+        <div id="wordsearch-game" class="game-section">
+            <h2>Find the Prepositions!</h2>
+            <div class="word-list">
+                <div class="words-to-find">
+                    <span class="word-item" data-word="ABOVE">ABOVE</span>
+                    <span class="word-item" data-word="BEHIND">BEHIND</span>
+                    <span class="word-item" data-word="BETWEEN">BETWEEN</span>
+                    <span class="word-item" data-word="UNDER">UNDER</span>
+                    <span class="word-item" data-word="NEAR">NEAR</span>
+                    <span class="word-item" data-word="INTO">INTO</span>
+                </div>
+            </div>
+            <div class="word-grid" id="word-grid"></div>
+            <button class="reset-btn" onclick="resetWordSearch()">New Puzzle</button>
+        </div>
+
+        <!-- Matching Game -->
+        <div id="matching-game" class="game-section">
+            <h2>Match the Prepositions!</h2>
+            <div class="matching-container">
+                <div class="matching-column" id="prepositions-column"></div>
+                <div class="matching-column" id="images-column"></div>
+            </div>
+            <button class="reset-btn" onclick="resetMatching()">New Game</button>
+        </div>
+
+        <!-- Unscramble Game -->
+        <div id="unscramble-game" class="game-section">
+            <h2>Unscramble the Words!</h2>
+            <div class="unscramble-container">
+                <div class="scrambled-word" id="scrambled-word"></div>
+                <input type="text" id="unscramble-input" placeholder="Type your answer here...">
+                <button onclick="checkUnscramble()">Check Answer</button>
+                <div class="feedback" id="unscramble-feedback"></div>
+                <button class="next-btn" onclick="nextUnscramble()">Next Word</button>
+            </div>
+        </div>
+
+        <!-- True/False Game -->
+        <div id="truefalse-game" class="game-section">
+            <h2>True or False?</h2>
+            <div class="truefalse-container">
+                <div class="cat-scene" id="cat-scene">
+                    <div class="cat">🐱</div>
+                    <div class="object" id="scene-object">📦</div>
+                </div>
+                <div class="statement" id="statement">The cat is on the box.</div>
+                <div class="tf-buttons">
+                    <button class="tf-btn true-btn" onclick="answerTrueFalse(true)">TRUE</button>
+                    <button class="tf-btn false-btn" onclick="answerTrueFalse(false)">FALSE</button>
+                </div>
+                <div class="feedback" id="tf-feedback"></div>
+                <button class="next-btn" onclick="nextTrueFalse()">Next Question</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
